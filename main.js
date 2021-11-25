@@ -10,6 +10,7 @@
 //     console.log("Error: ", err);
 // });
 
+const countriesList = document.getElementById("countries")
 fetch("https://restcountries.com/v3.1/all")
 .then(res => res.json())
 .then(data => initialize(data))
@@ -23,7 +24,7 @@ function initialize(countriesData){
     //     options += `<option value="${countries[i].cca2}">${countries[i].name.common}</option>`;
         
     // }
-    countries.forEach(country => options += `<option value="${countries[i].cca2}">${countries[i].name.common}</option>` )
+    countries.forEach(country => options += `<option value="${country.cca2}">${country.name.common}</option>` )
     countriesList.innerHTML = options;
     // document.getElementById("countries").innerHTML = options;
     
