@@ -27,12 +27,16 @@ function initialize(countriesData){
     countries.forEach(country => options += `<option value="${country.cca2}">${country.name.common}</option>` )
     countriesList.innerHTML = options;
     // document.getElementById("countries").innerHTML = options;
+    displayCountryInfo()
     
 }
 
 function displayCountryInfo(countryByAlphaCode){
-    const countryData = countries.find(country => country.c= countryByAlphaCode);
-    console.log(countryData);
+    const countryData = countries.find(country => country.official === countryByAlphaCode);
+    console.log(countryData)
     document.getElementById("capital").innerHTML = countryData.capital;
+    document.getElementById("population").innerHTML = countryData.population;
+    document.getElementById("currencies").innerHTML = countryData.currencies;
+    
     
 }
