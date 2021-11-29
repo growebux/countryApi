@@ -39,8 +39,15 @@ function displayCountryInfo(countryByAlphaCode){
     const countryData = countries.find(country => country.official === countryByAlphaCode);
     document.getElementById("capital").innerHTML = countryData.capital;
     document.getElementById("population").innerHTML = countryData.population;
-    document.getElementById("currencies").innerHTML = countryData.currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(", ");
+    // document.getElementById("currencies").innerHTML = countryData.currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(", ");
+    // document.querySelector("#flag-container img").src = countryData.flags.filter(f => f.svg).map(f => `${f.svg}`)
     
 
     
+}
+
+function flagsByCountry(countryByFlag){
+    const flagData = main-container.find(country => country.flags === countryByFlag);
+     document.querySelector("#flag-container img").src = countryData.flags.filter(f => f.flags).map(f => `${f.svg}`)
+     
 }
