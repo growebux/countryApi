@@ -30,13 +30,17 @@ function initialize(countriesData){
     displayCountryInfo()
     
 }
+// function countryComponent ({ name, currencies }) { 
+//     return `<option value="${currencies}">${name}</option>`
+//     let finalCountries = []
+//   }
 
 function displayCountryInfo(countryByAlphaCode){
     const countryData = countries.find(country => country.official === countryByAlphaCode);
-    console.log(countryData)
     document.getElementById("capital").innerHTML = countryData.capital;
     document.getElementById("population").innerHTML = countryData.population;
-    document.getElementById("currencies").innerHTML = countryData.currencies;
+    document.getElementById("currencies").innerHTML = countryData.currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(", ");
     
+
     
 }
