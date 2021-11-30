@@ -42,8 +42,6 @@ function displayCountryInfo(countryByAlphaCode){
     // document.getElementById("currencies").innerHTML = countryData.currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(", ");
     // document.querySelector("#flag-container img").src = countryData.flags.filter(f => f.svg).map(f => `${f.svg}`)
     
-
-    
 }
 
 function flagsByCountry(countryByFlag){
