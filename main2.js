@@ -10,21 +10,26 @@ const countriesList = document.getElementById("countries")
 function initialize(countriesData){
     countries = countriesData;
     let options = " ";
-    countries.forEach(country => options += `<option value=${country.cca2}">${country.name.common}</options>`)
+    countries.forEach(country => options += `<option value="${country.cca2}">${country.name.common}</option>`)
     countriesList.innerHTML = options;
     displayCountryInfo()
 
 }
 
 
+
 function displayCountryInfo(countryByAlphaCode){
-    const countryData = countries.find(country => country.official === countryByAlphaCode);
+    const countryData = countries.find(country => country.official === countryByAlphaCode)
     document.getElementById("capital").innerHTML = countryData.capital;
     document.getElementById("population").innerHTML = countryData.population;
+    document.getElementById("region").innerHTML = countryData.region;
+    document.querySelector("flag").innerHTML = countryData.flag;
     
 }
+    
 
-function flagsByCountry(countryByFlag){
-    const countryData = contries.find(country => country.flags === countryByFlag);
-    document.querySelector('#flag-container img').src = countryData.flags.filter(f = f.flags).map(f => `${f.svg}`)
-}
+// function flagsByCountry(countryByFlag){
+//     const countryData = contries.find(country => country.flags === countryByFlag);
+//     document.querySelector("#flag-container img").src = countryData.flag.filter(c => c.name);
+//     document.querySelector("#flag-container img").alt = `Flag of ${countryData.name}`;  
+// }

@@ -17,6 +17,8 @@ fetch("https://restcountries.com/v3.1/all")
 .catch(err => console.log("Error: ", err));
 
 
+
+
 function initialize(countriesData){
     countries = countriesData;
     let options =  " ";
